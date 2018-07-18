@@ -78,3 +78,21 @@ def create_chapter(id:int):
 		db.session.commit()
 		return redirect(url_for('titles.get_title', id=id))
 	return render_template('moder/edit_chapter.html', form=form)
+
+@moder.route('/title/<id>/edit_chapter/<num>', methods=['GET','POST'])
+def edit_chapter(id:int, num:int):
+	form=EditChapterForm()
+	title=Title.query.filter_by(id=id).first_or_404()
+	chapter=Chapter.query.filter_by(number=num).first_or_404()
+	if form.validate_on_submit():
+		chapter.name=form.name.data
+		chapter.description=form.description.data
+		chapter.url_for_image=form.url.data
+		chapter.number = form.number.data
+		db.session.add(chapter)
+		db.session.commit()
+		return redirect(url_for('index'))
+	form.name.data=chapter.name
+	form.description.data=chapter.description
+	form.url.data=chapter.url_for_image
+	return render_template('moder/edit_chapter.html', form=form)

@@ -11,7 +11,7 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 login_manager = LoginManager(app)
 login_manager.login_view = 'index'
-Misaka(app, escape=True, wrap=True)
+Misaka(app, escape=True, wrap=True, autolink=True)
 
 from app.titles import titles
 from app.posts import posts

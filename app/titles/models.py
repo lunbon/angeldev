@@ -29,7 +29,7 @@ class Chapter(db.Model):
 	title_id = db.Column(db.Integer, db.ForeignKey('title.id'),
 		nullable=False)
 	title = db.relationship('Title',
-		backref=db.backref('chapters', lazy=True))
+		backref=db.backref('chapters', lazy='dynamic'))
 	path_to_image = db.Column(db.String(), 
 					default=none_image)
 	url_for_image = db.Column(db.String(), 

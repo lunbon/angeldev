@@ -12,12 +12,10 @@ def all_titles():
 def get_title(id:int):
 	title = Title.query.get(id)
 	chapters = title.chapters
-	chapters.sort(key=lambda c:c.id, reverse=True)
+	if type(chapters)==type([]):
+		chapters.sort(key=lambda c:c.id, reverse=True)
 	return render_template('titles/title.html', title=title,chapters=chapters)
 @titles.route('/chapter/<id>')
 def get_chapter(id:int):
 	chapter = Chapter.query.get(id)
 	return render_template('titles/chapter.html', chapter=chapter)
-@titles.route('/add_title', methods=['GET', 'POST'])
-def add_title():
-	pass
