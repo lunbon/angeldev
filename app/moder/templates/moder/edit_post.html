@@ -1,0 +1,24 @@
+{%extends "base.html"%}
+{%block page_title%}Edit Post{%endblock%}
+{%block css%}
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='edit_post.css')}}">
+{%endblock%}
+{%block content%}
+		<form method='Post' action="">
+			{{form.hidden_tag()}}
+			<div class='container'>
+			<div>
+				{{form.header(placeholder="заголовок...")}}
+			</div>
+			<div>
+				{{form.body(placeholder="Текст...")}}
+			</div>
+			<div>
+				{{form.url(placeholder="url изображения...")}}
+			</div>
+			<div>
+				{{form.submit(value="отправить",id='submit')}}
+			</div>
+		</div>
+		</form>
+{%endblock%}

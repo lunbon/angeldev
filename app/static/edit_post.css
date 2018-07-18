@@ -1,0 +1,35 @@
+.container{
+	display:block;
+	text-align: center;
+	background-color:white;
+	width:1000px;
+}
+p{
+	display: block;
+	text-align: center;
+	width: 100%;
+}
+
+textarea{
+	resize:none;
+	padding: 1em;
+	font-size:1em;
+	width: 80%;
+	height: 10em;
+}
+input{
+	margin:5px;
+	padding: 8px;
+	width: 80%;
+	height: 1.5em;
+	border-width:1px;
+	border-color: black;
+}
+#submit{
+	height: 3em;
+	margin: 5px;
+	color: rgb(180, 0, 0);
+	font-weight: bold;
+	font-size: 1em;
+	background-color: black;
+}

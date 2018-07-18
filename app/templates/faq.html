@@ -1,0 +1,15 @@
+{%extends "base.html"%}
+{%block page_title%}AngelDev{%endblock%}
+{%block css%}
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='faq.css')}}">
+{%endblock%}
+{%block content%}
+	<div class="post">
+		<h3>{{faq.header}}</h3>
+		<div class="post-body">
+			<p>
+				{{faq.body|markdown}}
+			</p>
+		</div>
+	</div>
+{%endblock%}

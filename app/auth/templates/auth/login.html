@@ -1,0 +1,14 @@
+{%extends "base.html"%}
+{%block page_title%}Moder-Login{%endblock%}
+{%block content%}
+<form action="" method="POST">
+	{{form.hidden_tag()}}
+	<p>
+		{{form.name(size=32)}}
+	</p>
+	<p>
+		{{form.password(size=32)}}
+	</p>
+	<p>{{form.submit()}}</p>
+</form>
+{%endblock%}

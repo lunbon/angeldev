@@ -1,0 +1,21 @@
+{%extends "base.html"%}
+{%block page_title%}AngelDev - Releases{%endblock%}
+{%block css%}
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='titles.css')}}">
+{%endblock%}
+{%block content%}
+{%for title in all_titles%}
+	<div class="post">
+		<a href="{{url_for('titles.get_title',id=title.id)}}"><h3>{{title.name}}</h3></a>
+		<div class="post-body">
+			<img src="{{title.get_poster()}}">
+			<p class="description hide">
+				{{title.description}}
+			</p>
+		</div>
+	</div>
+{%endfor%}
+{%block js%}
+<script src="{{url_for('static', filename='titles.js')}}"></script>
+{%endblock%}
+{%endblock%}
