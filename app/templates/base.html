@@ -12,9 +12,9 @@
 			<div>Релизы</div>
 		</a>
 		{%if current_user.is_authenticated%}
-			<a href="{{url_for('index')}}"><h3 style="color:red;">Hi, My Lord!</h3></a>
+			<a href="{{url_for('index')}}"><h3>Hi, My Lord!</h3></a>
 		{%else%}
-			<a href="{{url_for('index')}}"><h3 style="color:red;">AngelDev</h3></a>
+			<a href="{{url_for('index')}}"><h3>AngelDev</h3></a>
 		{%endif%}
 		<a href="{{url_for('get_faq')}}">
 			<div>FAQ</div>
