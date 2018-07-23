@@ -1,12 +1,6 @@
 .hide{
 	display: none;
 }
-.content{
-	margin-top: 10%;
-	display:flex;
-	justify-content: space-around;
-	flex-wrap:wrap;
-}
 
 .post{
 	margin:20px;

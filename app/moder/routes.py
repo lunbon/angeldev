@@ -66,6 +66,22 @@ def create_title():
 		return redirect(url_for('titles.all_titles'))
 	return render_template('moder/edit_post.html', form=form)
 
+@moder.route('/edit_title/<id>', methods=['GET','POST'])
+def edit_title(id):
+	form=EditForm()
+	title=Title.query.filter_by(id=id).first_or_404()
+	if form.validate_on_submit():
+		title.name=form.header.data
+		title.description=form.body.data
+		title.url_for_image=form.url.data
+		db.session.add(title)
+		db.session.commit()
+		return redirect(url_for('all_titles'))
+	form.header.data=title.name
+	form.body.data=title.description
+	form.url.data=title.url_for_image
+	return render_template('moder/edit_post.html', form=form)
+
 @moder.route('/title/<id>/create_chapter', methods=['GET','POST'])
 def create_chapter(id:int):
 	form=EditChapterForm()

@@ -26,47 +26,34 @@ header div{
 body{
 	background-image: url('b6.jpg'); 
 	background-position: center center;
-	background-size: 100% auto;
+	background-size: cover;
 	background-color:white;
 	background-attachment: fixed;
 
 }
 .content{
-	display: flex;
-	justify-content: space-around;
-	margin-top: 20%;
-	flex-wrap: wrap;
+	margin-top: calc(10% + 50px);
 	background-color: rgba(0,0,0,0.5);
 	border-radius: 40px;
+	display:flex;
+	justify-content: space-around;
+	flex-wrap:wrap;
 }
 
 .post{
 	opacity: 1;
 	width: 300px;
+	height: 400px;
 	margin:20px;
 	border-radius: 2%;
 	background: white;
 	display: block;
-	padding: 20px;
-	
-}
-p{
-	display: block;
-	width: 300px;
-	margin:5px;
+	text-align: center;	
+	overflow: hidden;
 }
 img{
 	width:200px;
 	height: auto;
 	margin:5px;
 }
-.post-body{
-	display: flex;
-	justify-content: space-around;
-	flex-wrap:wrap;
-}
-.post h3{
-	display: flex;
-	justify-content: space-around;
-	flex-wrap:wrap;
-}
+

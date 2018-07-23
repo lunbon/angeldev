@@ -1,8 +1,9 @@
-.container{
+form{
 	display:block;
 	text-align: center;
 	background-color:white;
-	width:1000px;
+	width:80%;
+	margin-left: 10%;
 }
 p{
 	display: block;
